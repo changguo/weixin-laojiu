@@ -57,35 +57,22 @@ Page({
         autoplay2: true,
         interval2: 3000,
         duration2: 500,
-        goodslist: [{
-            imgUrl: "http://www.laojiupd.com/images/201601/thumb_img/429_thumb_G_1453944899877.jpg",
-            name: "洋河 蓝色经典 海之蓝 42度 480ml",
-            price: "129.00"
-        }, {
-            imgUrl: "http://www.laojiupd.com/images/201512/thumb_img/360_thumb_G_1451010413065.jpg",
-            name: "2015年 李渡清代 60度 500ml",
-            price: "69.00"
-        }, {
-            imgUrl: "http://www.laojiupd.com/images/201608/thumb_img/617_thumb_G_1470983974380.jpg",
-            name: "珍酒 1975精品 53度 500ml 、53度 2010年茅瓶 500ml",
-            price: "179.00"
-        }, {
-            imgUrl: "http://www.laojiupd.com/images/201604/thumb_img/533_thumb_G_1460404879621.jpg",
-            name: "2008年 太白 和谐(万村千乡) 50度 500ml（6瓶装）",
-            price: "109.00"
-        }]
+        goodslist: []
     },
     onLoad: function(options) {
+        var that = this;
         wx.request({
-            url: '/mock/goodslist.json',
+            url: 'http://tccpc.xyz/weixin-laojiu/mock/goosList.json',
             header: {
                 'Content-Type': 'application/json'
             },
             success: function(res) {
-                console.log(res.data)
+                that.setData({
+                    goodslist:res.data
+                })
             },
-            fail:function(z){
-                console.log(z)
+            fail:function(err){
+                console.log(err)
             }
         })
     },
