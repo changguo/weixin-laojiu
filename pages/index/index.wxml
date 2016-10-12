@@ -1,0 +1,59 @@
+<!--index.wxml-->
+<view class="banner">
+  <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="container">
+    <view class="section index-nav">
+        <block wx:for-items="{{navs}}">
+            <view class="l-c-c" data-type="{{item.name}}">
+                <image src="{{item.imgUrl}}" class="nav-icon" mode="aspectFit"/>
+                <view>{{item.name}}</view>
+            </view>
+        </block>
+    </view>
+    <view class="tit-kb">
+        <view class="tit-name">华致</view>
+        <view class="tit-mp">快报</view>
+        <view class="maohao">：</view>
+        <view class="titswiper">
+            <swiper class="swiperbox" indicator-dots="{{indicatorDots2}}" vertical="{{vertical2}}"
+              autoplay="{{autoplay2}}" interval="{{interval2}}" duration="{{duration2}}">
+              <block wx:for="{{titlist}}">
+                <swiper-item>
+                    <text>{{item}}</text>
+                </swiper-item>
+              </block>
+            </swiper>
+        </view>
+    </view>
+    <view class="tit">
+            <view class="title_val">
+                掌上秒杀
+            </view>
+            <view class="more">
+                更多
+            </view>
+    </view>
+    <view class="goodslist">
+        <block wx:for="{{goodslist}}">
+            <view class="goods">
+                <image src="{{item.imgUrl}}" class="good-img"/>
+                <view class="good-cont">
+                    <text class="good-name">{{item.name}}</text>
+                    <view class="good-price">
+                        <text>￥{{item.price}}</text>
+                        <image class="cart" src="/images/new_73.jpg"/>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+
+</view>
