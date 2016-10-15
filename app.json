@@ -3,9 +3,8 @@
     "pages/index/index",
     "pages/detall/detall",
     "pages/list/index",
-    "pages/component/index",
-    "pages/i/index",
-    "pages/logs/logs"
+    "pages/cart/cart",
+    "pages/i/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -29,7 +28,7 @@
           "selectedIconPath": "images/2.gif",
           "text": "分类"
         }, {
-          "pagePath": "pages/component/index",
+          "pagePath": "pages/cart/cart",
           "iconPath": "images/3.gif",
           "selectedIconPath": "images/3.gif",
           "text": "购物车"

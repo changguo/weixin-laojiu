@@ -10,8 +10,8 @@
         </swiper>
     </view>
     <view class="content">
-        <view class="prices">￥123</view>
-        <text class="name">洋河 蓝色经典 海之蓝 42度 480ml</text>
+        <view class="prices">￥{{goods.price}}</view>
+        <text class="name">{{goods.name}}</text>
         <text class="ts">温馨提示：</text>
         <text class="tsnr">此商品不可以使用优惠券抵扣</text>
         <text class="kc">商品库存：125</text>

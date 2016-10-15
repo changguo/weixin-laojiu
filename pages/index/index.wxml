@@ -43,19 +43,26 @@
     </view>
     <view class="goodslist">
         <block wx:for="{{goodslist}}">
-            <navigator url="../detall/detall">
             <view class="goods">
+                <navigator url="../detall/detall?id={{item.id}}&name={{item.name}}&price={{item.price}}&img={{item.imgUrl}}">
                 <image src="{{item.imgUrl}}" class="good-img"/>
+                </navigator>
                 <view class="good-cont">
-                    <text class="good-name">{{item.name}}</text>
+                    <navigator class="goods-navigator" url="../detall/detall?id={{item.id}}&name={{item.name}}&price={{item.price}}&img={{item.imgUrl}}">
+                        <text class="good-name">{{item.name}}</text>
+                    </navigator>
                     <view class="good-price">
                         <text>￥{{item.price}}</text>
-                        <image class="cart" src="/images/new_73.jpg"/>
+                        <image id="{{item.id}}" class="cart" src="/images/new_73.jpg" bindtap="addcart"/>
                     </view>
                 </view>
             </view>
-            </navigator>
         </block>
     </view>
 
+</view>
+<view class="body-view">
+  <toast hidden="{{toastHidden}}" bindchange="toastChange">
+    加入购物车~
+  </toast>
 </view>

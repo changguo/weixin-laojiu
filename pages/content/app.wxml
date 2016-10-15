@@ -1,7 +1,0 @@
-<!--app.wxml-->
-<view class="page">
-    <view class="page-section">
-        <text>主页</text>
-    </view>
-
-</view>

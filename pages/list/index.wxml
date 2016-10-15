@@ -15,10 +15,7 @@
         </view>
         <view style="display:{{ishidden2}}" class="right-bj">
             <image class="bj-titimg"  mode="aspectFit" src="http://www.laojiupd.com/mobile/themes/default/img/48098572d27e4ac3b5f5afac2d42cc66.jpg"/>
-            <block>
-                
-            </block>
         </view>
-        <view style="display:{{ishidden3}}" class="right-ptj">3</view>
+        <view style="display:{{ishidden3}}" class="right-ptj">葡萄酒</view>
     </scroll-view>
 </view>

@@ -12,10 +12,26 @@ Page({
         interval: 3000,
         duration: 1200,
         count: 1,
-        toastHidden:true
+        toastHidden:true,
+        goods:{
+            id:'',
+            name:'',
+            price:'',
+            img:''
+        }
+
     },
     onLoad: function(options) {
-        // 页面初始化 options为页面跳转所带来的参数
+        console.log(options);
+        this.data.imgUrls[0]=options.img;
+        this.setData({
+            goods:{
+                id:options.id,
+                name:options.name,
+                price:options.price,
+                img:options.img,
+            }
+        })
     },
     onReady: function() {
         // 页面渲染完成
@@ -50,6 +66,29 @@ Page({
    addcart:function(){
        this.setData({
             toastHidden:false
-        })
+        });
+        this.data.goods.count = this.data.count;
+        var arr = wx.getStorageSync('cart') || [];
+        if(arr.length>0){
+            for(var i in arr){
+                if(arr[i].id == this.data.goods.id){
+                    arr[i].count = arr[i].count + this.data.goods.count;
+                    try {
+                        wx.setStorageSync('cart', arr)
+                    } catch (e) {
+                        console.log(e)
+                    }
+                    return;
+                }
+            }
+            arr.push(this.data.goods);
+        }else{
+            arr.push(this.data.goods);
+        }
+        try {
+            wx.setStorageSync('cart', arr)
+        } catch (e) {
+            console.log(e)
+        }
    }
 })

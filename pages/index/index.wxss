@@ -116,6 +116,12 @@ page{
     flex-direction: column;
     font-size: 14px;
 }
+.goods-navigator{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+}
 .good-name{
     display: flex;
     flex: 1;

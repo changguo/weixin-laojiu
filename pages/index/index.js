@@ -57,7 +57,8 @@ Page({
         autoplay2: true,
         interval2: 3000,
         duration2: 500,
-        goodslist: []
+        goodslist: [],
+        toastHidden:true
     },
     onLoad: function(options) {
         var that = this;
@@ -93,5 +94,43 @@ Page({
         wx.navigateTo({
             url: '../content/app'
         })
+    },
+    toastChange:function(){
+       this.setData({
+           toastHidden:true
+       })
+   },
+   addcart:function(e){
+       this.setData({
+            toastHidden:false
+        });
+        for (var i in this.data.goodslist){
+            if(this.data.goodslist[i].id == e.target.id){
+                this.data.goodslist[i].count = 1;
+                var arr = wx.getStorageSync('cart') || [];
+                if(arr.length>0){
+                    for(var j in arr){
+                        if(arr[j].id == e.target.id){
+                            arr[j].count = arr[j].count + 1;
+                            try {
+                                wx.setStorageSync('cart', arr)
+                            } catch (e) {
+                                console.log(e)
+                            }
+                            return;
+                        }
+                    }
+                    arr.push(this.data.goodslist[i]);
+                }else{
+                    arr.push(this.data.goodslist[i]);
+                }
+                try {
+                    wx.setStorageSync('cart', arr)
+                    return;
+                } catch (e) {
+                    console.log(e)
+                }
+            }
+        }
     }
 })

@@ -1,8 +1,0 @@
-.page{
-    flex: 1;
-    background: #999;
-    font-size: 30px;
-}
-.page-section{
-    padding: 40px;
-}
