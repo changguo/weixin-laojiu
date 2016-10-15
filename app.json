@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/detall/detall",
     "pages/list/index",
     "pages/component/index",
     "pages/i/index",
@@ -8,7 +9,7 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#000",
+    "navigationBarBackgroundColor": "#e4393c",
     "navigationBarTitleText": "老酒频道",
     "navigationBarTextStyle":"white"
 },

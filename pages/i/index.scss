@@ -1,0 +1,16 @@
+.section{
+    label{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 8px;
+        text{
+            width:70px;
+            text-align: right;
+        }
+        input{
+            flex: 1;
+            border-bottom: 1rpx solid #999;
+        }
+    }
+}

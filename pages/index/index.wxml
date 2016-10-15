@@ -11,7 +11,7 @@
 </view>
 <view class="container">
     <view class="section index-nav">
-        <block wx:for-items="{{navs}}">
+        <block wx:for="{{navs}}">
             <view class="l-c-c" data-type="{{item.name}}">
                 <image src="{{item.imgUrl}}" class="nav-icon" mode="aspectFit"/>
                 <view>{{item.name}}</view>
@@ -43,6 +43,7 @@
     </view>
     <view class="goodslist">
         <block wx:for="{{goodslist}}">
+            <navigator url="../detall/detall">
             <view class="goods">
                 <image src="{{item.imgUrl}}" class="good-img"/>
                 <view class="good-cont">
@@ -53,6 +54,7 @@
                     </view>
                 </view>
             </view>
+            </navigator>
         </block>
     </view>
 

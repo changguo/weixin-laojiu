@@ -1,1 +1,7 @@
-<view>i</view>
+<view>myGithub:github.com/tccpc</view>
+<import src="/pages/tpls/signin.wxml" />
+<import src="/pages/tpls/actionsheet.wxml" />
+<import src="/pages/tpls/toast.wxml" />
+<template is="signin" data="{{modalHidden ,...userinfo}}"></template>
+<template is="actionsheet" data="{{...actionsheet}}"></template>
+<template is="toast" data="{{toastHidden}}"></template>

@@ -1,1 +1,9 @@
-<view>com</view>
+<view class="percent" hidden="{{percentHidden}}">
+    <!-- <progress percent="20" show-info />
+    <progress percent="40" stroke-width="12" />
+    <progress percent="60" color="pink" /> -->
+    <progress percent="{{percent}}" />
+</view>
+<view>
+    <audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" action="{{action}}" controls loop></audio>
+</view>
